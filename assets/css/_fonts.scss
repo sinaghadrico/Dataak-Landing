@@ -1,0 +1,44 @@
+@font-face {
+    font-family: "IranYekanNum";
+    src: url("./../font/IRANYekanRegularFaNum.ttf");
+}
+
+@font-face {
+    font-family: Samim;
+    src: url("./../font/Samim-FD.eot");
+    src: url("./../font/Samim-FD.eot?#iefix") format("embedded-opentype"),
+        url("./../font/Samim-FD.woff2") format("woff2"), url("./../font/Samim-FD.woff") format("woff"),
+        url("./../font/Samim-FD.ttf") format("truetype");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Samim;
+    src: url("./../font/Samim-Bold-FD.eot");
+    src: url("./../font/Samim-Bold-FD.eot?#iefix") format("embedded-opentype"),
+        url("./../font/Samim-Bold-FD.woff2") format("woff2"), url("./../font/Samim-Bold-FD.woff") format("woff"),
+        url("./../font/Samim-Bold-FD.ttf") format("truetype");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Samim;
+    src: url("./../font/Samim-Medium-FD.eot");
+    src: url("./../font/Samim-Medium-FD.eot?#iefix") format("embedded-opentype"),
+        url("./../font/Samim-Medium-FD.woff2") format("woff2"), url("./../font/Samim-Medium-FD.woff") format("woff"),
+        url("./../font/Samim-Medium-FD.ttf") format("truetype");
+    font-weight: 500;
+}
+
+$fontFamily: "IranYekanNum";
+
+body {
+    font-family: $fontFamily;
+    a {
+        text-decoration: none;
+    }
+
+    input {
+        font-family: $fontFamily;
+    }
+}

@@ -1,0 +1,24 @@
+#__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@import "assets/css/fonts";
+@import "assets/css/icons";
+
+body {
+    margin: 0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    background-image: url("./assets/svgs/top-typo.svg");
+}
+
+.container-footer {
+    background-image: url("./assets/svgs/buttom-typo.svg");
+}
