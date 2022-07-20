@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import useData from "services/useData";
 import useSWR from "swr";
-import { fromUnixTime, format } from "date-fns";
+import SocialBox from "./SocialBox";
 
 export default function SocialHistory() {
     const { getGrade, getSentiment, getSubjects } = useData();
@@ -18,7 +18,32 @@ export default function SocialHistory() {
 
     return (
         <Container className="container-footer">
-            <div className=" flex flex-row justify-center"></div>
+            <div className=" flex flex-row justify-center">
+                <SocialBox
+                    type="news"
+                    dataSubject={dataSubjects?.news}
+                    dataGrade={dataGrade?.news}
+                    dataSentiment={dataSentiment?.news}
+                />
+                <SocialBox
+                    type="instagram"
+                    dataSubject={dataSubjects?.instagram}
+                    dataGrade={dataGrade?.instagram}
+                    dataSentiment={dataSentiment?.instagram}
+                />
+                <SocialBox
+                    type="twitter"
+                    dataSubject={dataSubjects?.twitter}
+                    dataGrade={dataGrade?.twitter}
+                    dataSentiment={dataSentiment?.twitter}
+                />
+                <SocialBox
+                    type="telegram"
+                    dataSubject={dataSubjects?.telegram}
+                    dataGrade={dataGrade?.telegram}
+                    dataSentiment={dataSentiment?.telegram}
+                />
+            </div>
         </Container>
     );
 }

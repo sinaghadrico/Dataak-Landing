@@ -2,14 +2,15 @@ import type { Detaills } from "models/details";
 import type { Grade } from "models/grade";
 import type { Info } from "models/info";
 import type { Post } from "models/post";
-import { Process } from "models/process";
-import { Resource } from "models/resource";
+import type { Process } from "models/process";
+import type { Resource } from "models/resource";
 import type { Sentiment } from "models/sentiment";
 import type { Subjects } from "models/subjects";
 import useRequest from "utils/useRequest";
 
 const useData = () => {
     const request = useRequest();
+
     const getDetails = () => {
         return new Promise((resolve: (response: Detaills) => void, reject) => {
             request

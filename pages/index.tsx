@@ -14,7 +14,7 @@ export default function Home() {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
 
-            <div className="flex flex-col w-full md:flex-col lg:flex-col self-center m-auto ">
+            <div className="flex flex-col w-full md:flex-col lg:flex-col self-center  ">
                 <Header />
                 <Info />
                 <Posts />

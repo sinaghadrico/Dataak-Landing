@@ -1,10 +1,11 @@
 export interface Sentiment {
-    twitter: KeyValue;
-    instagram: KeyValue;
-    telegram: KeyValue;
+    twitter: KeyValueSentiment;
+    instagram: KeyValueSentiment;
+    telegram: KeyValueSentiment;
+    news?: KeyValueSentiment;
 
 }
-export interface KeyValue {
+export interface KeyValueSentiment {
     sentiment: number;
 }
 export interface Result {

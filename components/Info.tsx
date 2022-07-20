@@ -1,7 +1,5 @@
-import { Box } from "@ui-components/Box";
 import useData from "services/useData";
 import useSWR from "swr";
-import { fromUnixTime, format } from "date-fns";
 import Process from "./Process";
 import Resources from "./Resources";
 import { Text } from "@ui-components/Text";
@@ -12,15 +10,15 @@ export default function Info() {
     const { data } = useSWR([`getInfo`], getInfo);
 
     return (
-        <Box>
-            <div className=" flex flex-row justify-center">
-                <Text> {dataDetails?.title}</Text>
+        <div className="flex flex-col">
+            <div className="flex flex-row justify-center mt-16">
+                <Text size="2xl"> {dataDetails?.title}</Text>
             </div>
 
-            <div className=" flex flex-row justify-center">
+            <div className="flex flex-row  mt-10">
                 <Process total={+data?.post_count} />
                 <Resources total={+data?.resource_count} />
             </div>
-        </Box>
+        </div>
     );
 }

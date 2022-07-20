@@ -9,7 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button({
     fontSize = "12px",
-    maxWidth = "268px",
+    maxWidth = "246px",
     color = "purple",
     children,
     ...restProps
@@ -24,15 +24,15 @@ export function Button({
         font-style: normal;
         font-weight: 700;
         font-size: ${fontSize};
-        line-height: 33px;
+        line-height: 20px;
         max-width: ${maxWidth};
         width: 100%;
-        height: 56px;
+        height: 40px;
         text-align: center;
-        border-radius: 32px;
-        padding: 0 15px;
+        border-radius: 20px;
+        padding: 0 5px;
 
-        box-shadow: 2px 4px 2px ${({ theme }) => theme.buttons?.[color]?.["filled"]?.["boxShadow"]};
+        /* box-shadow: 2px 4px 2px ${({ theme }) => theme.buttons?.[color]?.["filled"]?.["boxShadow"]}; */
         color: ${({ theme }) => theme.buttons?.[color]?.["filled"]?.["color"]};
         background: ${({ theme }) => theme.buttons?.[color]?.["filled"]?.["background"]};
         > span {
@@ -40,7 +40,7 @@ export function Button({
         }
 
         &:hover {
-            box-shadow: 2px 4px 2px ${({ theme }) => theme.buttons?.[color]?.["outline"]?.["boxShadow"]};
+            box-shadow: 1px 1px 4px ${({ theme }) => theme.buttons?.[color]?.["outline"]?.["boxShadow"]};
             color: ${({ theme }) => theme.buttons?.[color]?.["outline"]?.["color"]};
             background: ${({ theme }) => theme.buttons?.[color]?.["outline"]?.["background"]};
         }

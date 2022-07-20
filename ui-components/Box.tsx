@@ -9,14 +9,14 @@ interface BoxProps {
 
 const WrapperBox = memo(styled.div`
     width: fit-content;
-    background: ${({ theme }) => theme.colors?.["secondary_10"]};
+    background: ${({ theme }) => theme.colors?.["white"]};
     border-radius: 48px;
     padding: 20px;
 `);
 
 export function Box({ children, className, style }: BoxProps) {
     return (
-        <WrapperBox className={"w-full px-4 pt-16 " + className} style={style}>
+        <WrapperBox className={"w-full px-4 pt-16 " + className ? className : ""} style={style}>
             {children}
         </WrapperBox>
     );

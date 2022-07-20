@@ -1,11 +1,11 @@
 export interface Subjects {
-    twitter: KeyValue[];
-    instagram: KeyValue[];
-    telegram: KeyValue[];
-    news: KeyValue[];
+    twitter: KeyValueSubjects[];
+    instagram: KeyValueSubjects[];
+    telegram: KeyValueSubjects[];
+    news: KeyValueSubjects[];
 
 }
-export interface KeyValue {
+export interface KeyValueSubjects {
     word: string;
     count: number;
 }

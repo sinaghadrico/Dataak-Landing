@@ -46,13 +46,13 @@ const theme = {
             filled: {
                 background: colors["purple"],
                 color: colors["white"],
-                // boxShadow: "rgba(88, 38, 232, 0.5)",
+                boxShadow: "rgba(88, 38, 232, 0.5)",
                 backgroundIcon: "#bca8f6",
             },
             outline: {
-                background: colors["primary"],
+                background: colors["white"],
                 color: colors["purple"],
-                boxShadow: "rgba(88, 38, 232, 0.5)",
+                boxShadow: colors["purple"],
                 backgroundIcon: "#bca8f6",
             },
         },

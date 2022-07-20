@@ -1,7 +1,6 @@
 import { Box } from "@ui-components/Box";
 import useData from "services/useData";
 import useSWR from "swr";
-import { fromUnixTime, format } from "date-fns";
 
 interface ProcessProps {
     total: number;

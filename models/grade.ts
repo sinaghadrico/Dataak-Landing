@@ -1,10 +1,11 @@
 export interface Grade {
-    twitter: KeyValue;
-    instagram: KeyValue;
-    telegram: KeyValue;
+    twitter: KeyValueGrade;
+    instagram: KeyValueGrade;
+    telegram: KeyValueGrade;
+    news?: KeyValueGrade;
 
 }
-export interface KeyValue {
+export interface KeyValueGrade {
     numerator: number;
     denominator: number;
     calculated: number;

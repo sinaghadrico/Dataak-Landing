@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Router from "next/router";
 import { useState, useEffect } from "react";
 import { Transition } from "@headlessui/react";
-import styles from "./layout.module.scss";
 
 export default function Layout({ children }: { children: JSX.Element | JSX.Element[] }) {
     const [loading, SetLoading] = useState(false);
@@ -27,13 +26,13 @@ export default function Layout({ children }: { children: JSX.Element | JSX.Eleme
         flex-direction: column;
         background-color: ${({ theme }) => theme.colors?.["background"]};
         background-repeat: no-repeat;
-        /* background-size: cover; */
         padding: 0px;
+        margin: 0;
         min-height: 100vh;
     `;
 
     return (
-        <Container className="container">
+        <Container className="container-main">
             <main>
                 {/* <Loading loading={loading} /> */}
                 <Transition
