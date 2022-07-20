@@ -60,7 +60,6 @@ export default function Header() {
             <Icon src="ri-add-line" />
             {/* <Icon src={logo} /> */}
             <Icon src={logoLanding} />
-            <Text> {data?.title}</Text>
         </CustomHeader>
     );
 }

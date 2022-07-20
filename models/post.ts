@@ -1,4 +1,4 @@
-export interface Posts {
+export interface Post {
     avatar: string;
     caption?: any;
     description: string;
@@ -235,7 +235,7 @@ export interface User {
 }
 
 export interface Result  {
-    data: Posts;
+    data: Post[];
     mata: any[];
 }
 
