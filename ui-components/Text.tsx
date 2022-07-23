@@ -15,6 +15,7 @@ interface TextProps extends HTMLAttributes<HTMLElement> {
         | "blue"
         | "green"
         | "red"
+        | "white"
         | "yellow";
     children: JSX.Element | JSX.Element[] | ReactNode;
     type?: "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "span";
@@ -34,7 +35,9 @@ interface TextInlineProps extends HTMLAttributes<HTMLElement> {
         | "blue"
         | "green"
         | "red"
+        | "white"
         | "yellow";
+
     children: JSX.Element | JSX.Element[] | ReactNode;
     className?: string;
 }

@@ -10,6 +10,9 @@ const nextConfig = {
         styledComponents: true,
         removeConsole: true,
     },
+    images: {
+        domains: ['cdn.dataak.com'],
+      },
 };
 
 module.exports = nextConfig;
