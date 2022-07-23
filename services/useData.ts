@@ -48,6 +48,7 @@ const useData = () => {
                             time: key,
                         };
                     });
+               
                     resolve(data);
                 })
                 .catch((error) => {
