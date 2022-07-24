@@ -10,8 +10,9 @@ interface BoxProps {
 const WrapperBox = memo(styled.div`
     width: fit-content;
     background: ${({ theme }) => theme.colors?.["white"]};
-    border-radius: 48px;
+    border-radius: 16px;
     padding: 20px;
+    box-shadow: 0px 4px 25px rgba(107, 134, 249, 0.2);
 `);
 
 export function Box({ children, className, style }: BoxProps) {

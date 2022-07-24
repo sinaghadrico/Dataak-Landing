@@ -19,24 +19,28 @@ interface SocialBoxProps {
 
 export default function SocialBox({ type, dataSubject, dataSentiment, dataGrade }: SocialBoxProps) {
     return (
-        <Box>
-            <SocialBoxContainer className={`flex flex-col justify-center type-${type}`}>
-                <div className="flex box-header" style={{ background: SocialIconBgColor[type] }}>
-                    <Icon src={SocialIconDic[type]} />
-                    <Text>{SocialDic[type]}</Text>
-                </div>
+        <SocialBoxContainer className={`flex flex-col justify-center p-5 type-${type}`}>
+            <div
+                className="flex  items-center box-header"
+                style={{ background: SocialIconBgColor[type], marginBottom: "-68px", zIndex: 1 }}
+            >
+                <Icon src={SocialIconDic[type]} style={{ color: "white", fontSize: "30px" }} />
+                <Text.h1 color="white" className="px-2">
+                    {SocialDic[type]}
+                </Text.h1>
+            </div>
+            <Box style={{ paddingTop: "68px", minHeight: "448px" }}>
                 <WordCloud data={dataSubject} />
-                <Sentiment data={dataSentiment} />
-                <Grade data={dataGrade} type={type} />
-            </SocialBoxContainer>
-        </Box>
+                {type != "news" && <Sentiment data={dataSentiment} />}
+                {type != "news" && <Grade data={dataGrade} type={type} />}
+            </Box>
+        </SocialBoxContainer>
     );
 }
 const SocialBoxContainer = styled.div`
     .box-header {
         display: flex;
         padding: 16px;
-        /* width: 246px; */
         height: 68px;
         border-radius: 16px;
     }

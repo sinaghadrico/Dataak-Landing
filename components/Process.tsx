@@ -14,15 +14,15 @@ export default function Process({ total }: ProcessProps) {
     const { data } = useSWR([`getProcess`], getProcess);
 
     return (
-        <Box>
-            <div className=" flex flex-row justify-center">
-                <TotalBox>
-                    <Text.h1 color="white">{total}</Text.h1>
-                    <Text.p color="white">مطلب </Text.p>
-                </TotalBox>
+        <div className=" flex flex-row justify-center p-5 ">
+            <TotalBox style={{ marginLeft: "-96px" }}>
+                <Text.h1 color="white">{total}</Text.h1>
+                <Text.p color="white">مطلب </Text.p>
+            </TotalBox>
+            <Box style={{ paddingRight: "96px" }}>
                 <LineChart data={data} />
-            </div>
-        </Box>
+            </Box>
+        </div>
     );
 }
 const TotalBox = styled.div`
@@ -31,7 +31,8 @@ const TotalBox = styled.div`
     justify-content: center;
     align-items: center;
     width: 96px;
-    height: 200px;
+    min-height: 200px;
     background: #6b86f9;
     border-radius: 16px;
+    z-index: 1;
 `;

@@ -15,7 +15,7 @@ export default function Info() {
                 <Text size="2xl"> {dataDetails?.title}</Text>
             </div>
 
-            <div className="flex flex-row  mt-10">
+            <div className="flex flex-row flex-wrap  justify-center mt-10">
                 <Process total={+data?.post_count} />
                 <Resources total={+data?.resource_count} />
             </div>

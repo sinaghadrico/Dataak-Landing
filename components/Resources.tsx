@@ -16,15 +16,15 @@ export default function Resources({ total }: ResourcesProps) {
     const { data } = useSWR([`getResources`], getResources);
 
     return (
-        <Box>
-            <div className=" flex flex-row justify-center">
-                <TotalBox>
-                    <Text.h1 color="white">{total}</Text.h1>
-                    <Text.p color="white">منبع</Text.p>
-                </TotalBox>
-                <div className="flex flex-col">
+        <div className=" flex flex-row justify-center p-5 ">
+            <TotalBox style={{ marginLeft: "-96px" }}>
+                <Text.h1 color="white">{total}</Text.h1>
+                <Text.p color="white">منبع</Text.p>
+            </TotalBox>
+            <Box style={{ paddingRight: "96px" }}>
+                <div className="flex flex-col px-5">
                     <Text>فعال‌ترین‌ها</Text>
-                    <div className="grid grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-3 md:gap-2 lg:gap-6 ">
+                    <div className="grid grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-3 md:gap-2 lg:gap-11 pt-5 ">
                         {data?.map((resource) => (
                             <ResourceAvatar>
                                 <Icon
@@ -46,8 +46,8 @@ export default function Resources({ total }: ResourcesProps) {
                         ))}
                     </div>
                 </div>
-            </div>
-        </Box>
+            </Box>
+        </div>
     );
 }
 const ResourceAvatar = styled.div`
@@ -70,7 +70,8 @@ const TotalBox = styled.div`
     justify-content: center;
     align-items: center;
     width: 96px;
-    height: 200px;
+    min-height: 200px;
     background: #6b86f9;
     border-radius: 16px;
+    z-index: 1;
 `;

@@ -27,7 +27,7 @@ export function Button({
         line-height: 20px;
         max-width: ${maxWidth};
         width: 100%;
-        height: 40px;
+        min-height: 40px;
         text-align: center;
         border-radius: 20px;
         padding: 0 5px;

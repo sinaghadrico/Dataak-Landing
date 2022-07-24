@@ -9,12 +9,12 @@ export default function Home() {
     return (
         <div className="flex min-h-screen flex-col items-center content-center  ">
             <Head>
-                <title>Dataak Landing | Home</title>
+                <title>دیتاک | الکامپ</title>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
 
-            <div className="flex flex-col w-full md:flex-col lg:flex-col self-center  ">
+            <div className="flex flex-col md:flex-col lg:flex-col w-full self-center  ">
                 <Header />
                 <Info />
                 <Posts />

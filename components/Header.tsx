@@ -31,8 +31,8 @@ export default function Header() {
     };
 
     return (
-        <CustomHeader className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 md:gap-2 lg:gap-10 ">
-            <div className="flex">
+        <CustomHeader className="flex flex-row items-center justify-between  px-5 md:px-28 ">
+            <div className="flex justify-start basis-1/2 ">
                 <Logo>
                     <a href={"https://dataak.com/"} target="_blank">
                         <Icon src={logoDataak} className="mx-2" />
@@ -45,7 +45,7 @@ export default function Header() {
                 </Logo>
             </div>
 
-            <Link href={"/form"}>
+            <Link href={"/form"} className="flex justify-end basis-1/2 ">
                 <Button>گزارش کسب‌وکار خودت رو داشته باش!</Button>
             </Link>
         </CustomHeader>
@@ -55,9 +55,10 @@ const CustomHeader = styled.header`
     position: sticky;
     top: 0;
     z-index: 1;
-    padding: 6px 4px;
     background: ${({ theme }) => theme.colors?.["white"]};
-    min-height: 52px;
+    border-bottom: 1px solid #f8f9fa;
+    min-height: 64px;
+    z-index: 2;
 `;
 const Logo = styled.div`
     padding: 4px;

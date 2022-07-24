@@ -48,7 +48,7 @@ const useData = () => {
                             time: key,
                         };
                     });
-               
+
                     resolve(data);
                 })
                 .catch((error) => {
@@ -62,7 +62,7 @@ const useData = () => {
                 .get(`resources`)
                 .then((response: any) => {
                     const data: Resource[] = response.result.data;
-                    resolve(data);
+                    resolve(data?.slice(0, 12));
                 })
                 .catch((error) => {
                     reject(error);

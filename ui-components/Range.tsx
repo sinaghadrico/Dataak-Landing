@@ -9,22 +9,33 @@ interface RangeProps {
     max?: string;
 }
 
-export function Range({ value, min = "0", max = "100" }: RangeProps) {
-    const persent: number = value > 100 ? 100 : Number(Number(value)?.toFixed());
-    const icon = persent >= 50 ? "ri-emotion-happy-line" : "ri-emotion-normal-line";
+export function Range({ value = 0 }: RangeProps) {
+    const persent: number =
+        value > 0 ? Number(50 - Math.floor(Number(value) / 2)) : Number(50 + Math.floor((Number(value) * -1) / 2));
+
+    const icon = value > 0 ? "ri-emotion-happy-line" : "ri-emotion-normal-line";
+
+    const CustomWrapperRangeValue = memo(styled.div`
+        position: absolute;
+        top: -35px;
+        color: ${value > 0 ? "#19CE7F" : "#F7936F"};
+
+        font-size: 20px;
+    `);
+
     return (
         <CustomWrapperRange>
             <CustomWrapperRangeLine className="line flex-1">
                 <CustomWrapperRangePointer
                     className="pointer"
                     style={{
-                        left: persent + "%",
+                        right: persent + "%",
                     }}
                 ></CustomWrapperRangePointer>
                 <CustomWrapperRangeValue
                     className="value"
                     style={{
-                        left: persent - 1 + "%",
+                        right: `calc(${persent}% - 8px)`,
                     }}
                 >
                     <Icon src={icon} />
@@ -40,29 +51,23 @@ const CustomWrapperRange = memo(styled.div`
     width: 100%;
     height: 20px;
     margin: 20px 0;
+    position: relative;
 `);
 const CustomWrapperRangeLine = memo(styled.div`
     height: 6px;
     margin: 0 10px;
     border-radius: 8px;
     /* transform: rotate(-180deg); */
-    background: linear-gradient(90deg, #17ce7f 0%, #f7936f 49.48%, #f16063 100%);
+    background: linear-gradient(90deg, #f16063 0%, #f7936f 49.48%, #17ce7f 100%);
     position: relative;
 `);
 
 const CustomWrapperRangePointer = memo(styled.div`
-    position: relative;
+    position: absolute;
     width: 4px;
     height: 16px;
     top: -4.2px;
     background: #ffffff;
     border: 1px solid #e1e8ff;
     border-radius: 2px;
-`);
-
-const CustomWrapperRangeValue = memo(styled.div`
-    position: relative;
-    top: 0px;
-
-    font-size: 20px;
 `);

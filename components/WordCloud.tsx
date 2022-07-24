@@ -9,6 +9,9 @@ interface WordCloudProps {
 export default function WordCloud({ data }: WordCloudProps) {
     const WrapperContainer = styled.div`
         max-width: 246px;
+        .Tag-cloud-wrapper {
+            min-height: 200px;
+        }
     `;
 
     const tags =
@@ -23,9 +26,10 @@ export default function WordCloud({ data }: WordCloudProps) {
 
     return (
         <WrapperContainer className=" flex flex-col justify-center">
-            <Text> ابر کلمات</Text>
-
-            <TagCloud minSize={14} maxSize={32} tags={tags} colorOptions={options} />
+            <Text className="py-2"> ابر کلمات</Text>
+            <div className="Tag-cloud-wrapper flex flex-col justify-center">
+                <TagCloud minSize={14} maxSize={32} tags={tags} colorOptions={options} />
+            </div>
         </WrapperContainer>
     );
 }
