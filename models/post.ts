@@ -126,7 +126,6 @@ export interface Post {
     ["relation.url"]: string;
     uptitle?: any;
     samane_replies: string[];
-
 }
 
 export interface RetweetedStatus {
@@ -234,7 +233,7 @@ export interface User {
     blockers: any[];
 }
 
-export interface Result  {
+export interface Result {
     data: Post[];
     mata: any[];
 }
@@ -242,4 +241,18 @@ export interface Result  {
 export interface Response {
     result: Result;
     errors: any[];
+}
+export interface PostCard {
+    avatar: string;
+    username: string;
+    time: string;
+    description?: string;
+    type: string;
+    // images: string[];
+    like_count?: number;
+    comment_count?: number;
+    view_count?: number;
+
+    link: string;
+    id: string;
 }
