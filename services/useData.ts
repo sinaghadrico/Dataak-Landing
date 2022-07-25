@@ -1,4 +1,4 @@
-import type { Detaills } from "models/details";
+import type { Details } from "models/details";
 import type { Grade } from "models/grade";
 import type { Info } from "models/info";
 import type { Post } from "models/post";
@@ -13,11 +13,11 @@ const useData = () => {
     const request = useRequest();
 
     const getDetails = () => {
-        return new Promise((resolve: (response: Detaills) => void, reject) => {
+        return new Promise((resolve: (response: Details) => void, reject) => {
             request
                 .get(``)
                 .then((response: any) => {
-                    const data: Detaills = response.result.data;
+                    const data: Details = response.result.data;
                     resolve(data);
                 })
                 .catch((error) => {
@@ -44,11 +44,11 @@ const useData = () => {
                 .get(`process`)
                 .then((response: any) => {
                     const data: Process[] = Object.entries(response.result.data).map(([key, value]: any) => {
-                        const { time } = getDateTime(key)
-                     
+                        const { time } = getDateTime(key);
+
                         return {
                             count: value,
-                            time:  time,
+                            time: time,
                         };
                     });
 

@@ -1,4 +1,4 @@
-export interface Detaills {
+export interface Details {
     id: number;
     title: string;
     slug: string;
@@ -10,11 +10,10 @@ export interface Detaills {
     last_update: string;
     created_at: string;
     updated_at: string;
-
 }
 
 export interface Result {
-    data: Detaills;
+    data: Details;
     mata: any[];
 }
 
