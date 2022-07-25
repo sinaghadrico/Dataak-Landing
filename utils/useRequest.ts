@@ -1,24 +1,26 @@
 import { useMemo } from "react";
 import axios from "axios";
+import { useRouter } from "next/router";
 const useRequest = () => {
-    
+    const router = useRouter();
+
+    const campaign = router?.asPath?.split(/\?/)?.[1];
 
     const request = useMemo(() => {
         return axios.create({
-            baseURL: process.env.baseURL,
+            baseURL: process.env.baseURL + (campaign ? campaign?.replace("campaign=", "") : "elecomp"),
             timeout: 10000,
             headers: {
                 "content-type": "application/json",
             },
         });
-    }, []);
+    }, [campaign]);
 
     request.interceptors.response.use(
         (response) => {
             return response?.data ? response?.data : response;
         },
-        (error) => {
-        },
+        (error) => {},
     );
 
     const get = (arg: string) => {

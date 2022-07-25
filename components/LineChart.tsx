@@ -21,8 +21,6 @@ export default function LineChart({ data = [] }: LineChartProps) {
                         name="count"
                         label={{
                             formatter: (val) => {
-                                debugger;
-
                                 return val;
                             },
                             autoRotate: true,

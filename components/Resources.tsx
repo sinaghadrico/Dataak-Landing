@@ -4,7 +4,7 @@ import useData from "services/useData";
 import useSWR from "swr";
 import { Icon } from "@ui-components/Icon";
 import { getImageFromProxy } from "utils/getImageFromProxy";
-import { SocialIconColor, SocialIconDic, ResourceTypeDic } from "utils/convertDic";
+import { SocialIconColor, SocialIconDic, ResourceTypeDic, ResourceAvatarDic } from "utils/convertDic";
 import { Text } from "@ui-components/Text";
 
 interface ResourcesProps {
@@ -34,9 +34,8 @@ export default function Resources({ total }: ResourcesProps) {
                                 />
                                 <Icon
                                     src={getImageFromProxy(
-                                        "https://api.dataak.com/media/images/news/agency/35" ||
-                                            resource?.profile_pic_url,
-                                        "image",
+                                        resource?.[ResourceAvatarDic[ResourceTypeDic[resource?.resource_type]]],
+                                        "avatar",
                                     )}
                                     width="55"
                                     height="55"

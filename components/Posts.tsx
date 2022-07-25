@@ -13,11 +13,9 @@ import { Text } from "@ui-components/Text";
 export default function Posts() {
     const { getPosts } = useData();
     const { data } = useSWR([`getPosts`], getPosts);
-
-    const [pageCount, SetPageCount] = useState(8);
-
-    const perPage = 8;
+    const perPage = 9;
     const total = data?.length;
+    const [pageCount, SetPageCount] = useState(perPage);
 
     return (
         <div className=" flex flex-col flex-wrap justify-center items-center">
@@ -32,14 +30,13 @@ export default function Posts() {
                 ))}
             </div>
             {total !== pageCount && (
-                <div className="flex justify-center items-center cursor-pointer">
-                    <Icon
-                        src="ri-add-line"
-                        onClick={() => {
-                            total - pageCount > perPage ? SetPageCount(pageCount + perPage) : SetPageCount(total);
-                        }}
-                        style={{ color: "#6B86F9", fontSize: 20 }}
-                    />
+                <div
+                    className="flex justify-center items-center cursor-pointer"
+                    onClick={() => {
+                        total - pageCount > perPage ? SetPageCount(pageCount + perPage) : SetPageCount(total);
+                    }}
+                >
+                    <Icon src="ri-add-line" style={{ color: "#6B86F9", fontSize: 20 }} />
 
                     <Text color="purple"> مشاهده بیشتر</Text>
                 </div>

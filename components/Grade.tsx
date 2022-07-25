@@ -1,5 +1,6 @@
 import { KeyValueGrade } from "models/grade";
 import styled from "styled-components";
+import useSWR from "swr";
 import { SocialIconBgColor } from "utils/convertDic";
 interface GradeProps {
     type: "news" | "instagram" | "twitter" | "telegram";
@@ -7,12 +8,13 @@ interface GradeProps {
 }
 
 export default function Grade({ data, type }: GradeProps) {
+    const { data: dataDetails } = useSWR([`getDetails`]);
     return (
         <div className=" flex flex-row  items-center">
             <GradientText style={{ background: SocialIconBgColor[type] }}>
                 {`${Math.floor(data?.calculated * 100) || 0}%`}
             </GradientText>
-            سهم الکامپ از این بستر
+            سهم {dataDetails?.title} از این بستر
         </div>
     );
 }

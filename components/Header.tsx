@@ -1,6 +1,4 @@
 import logoDataak from "assets/pngs/logo.png";
-import logoLanding from "assets/pngs/logo-landing.png";
-import useData from "services/useData";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 import styled from "styled-components";
@@ -9,8 +7,8 @@ import { Button } from "@ui-components/Button";
 
 export default function Header() {
     const { push } = useRouter();
-    const { getDetails } = useData();
-    const { data } = useSWR([`getDetails`], getDetails);
+
+    const { data } = useSWR([`getDetails`]);
 
     const Link = ({ children, href, className = "" }) => {
         return (
@@ -38,11 +36,13 @@ export default function Header() {
                         <Icon src={logoDataak} className="mx-2" />
                     </a>
                 </Logo>
-                <Logo>
-                    <a href={"http://iran-elecomp.com/"} target="_blank">
-                        <Icon src={logoLanding} className="mx-2" />
-                    </a>
-                </Logo>
+                {data?.logo && (
+                    <Logo>
+                        <a href={"http://iran-elecomp.com/"} target="_blank">
+                            <Icon src={data?.logo} className="mx-2" />
+                        </a>
+                    </Logo>
+                )}
             </div>
 
             <Link href={"/form"} className="flex justify-end basis-1/2 ">

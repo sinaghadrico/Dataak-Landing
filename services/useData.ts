@@ -65,7 +65,7 @@ const useData = () => {
                 .get(`resources`)
                 .then((response: any) => {
                     const data: Resource[] = response.result.data;
-                    resolve(data?.slice(0, 12));
+                    resolve(data?.slice(0, 12) || []);
                 })
                 .catch((error) => {
                     reject(error);

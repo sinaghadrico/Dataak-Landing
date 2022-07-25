@@ -4,7 +4,7 @@ import { PostCard } from "models/post";
 import { Icon } from "@ui-components/Icon";
 import { PostInstagramDic, SocialIconDic } from "utils/convertDic";
 import { getImageFromProxy } from "utils/getImageFromProxy";
-import { getformatDistanceToNowStrict } from "utils/getDateTime";
+import { getFormatDistanceToNowStrict } from "utils/getDateTime";
 import logoAvatar from "assets/img/avatar.jpg";
 interface PostCardProps {
     data: PostCard;
@@ -35,6 +35,22 @@ export default function InstagramCard({ data }: PostCardProps) {
             background-repeat: no-repeat;
             background-size: cover;
         }
+        .card-header-type {
+            background: #9caebbc2;
+            border-radius: 5px;
+            padding: 3px 5px;
+        }
+        .card-header-user-details-username {
+            background: #9caebbc2;
+            border-radius: 5px;
+            padding: 3px 5px;
+        }
+        .card-header-user-details-time {
+            background: #9caebbc2;
+            border-radius: 5px;
+            padding: 3px 5px;
+            margin-top: 2px;
+        }
     `;
     const imageGallery = data?.["images"] ? JSON?.parse(data?.["images"]) || [] : [];
 
@@ -51,23 +67,29 @@ export default function InstagramCard({ data }: PostCardProps) {
                         backgroundImage: `url(${getImageFromProxy(srcImage, "image")})`,
                     }}
                 >
-                    <div className="card-header-type  flex flex-row justify-center items-center p-5">
+                    <div className="card-header-type  flex flex-row justify-center items-center m-5">
                         <Icon
                             src={SocialIconDic["instagram"]}
                             style={{ fontSize: "20px", color: "white" }}
                             className="pl-1"
                         />
 
-                        <Text color="white"> {"اینستاگرام"}</Text>
+                        <Text color="white" size="sm">
+                            {" "}
+                            {"اینستاگرام"}
+                        </Text>
                     </div>
                     <div className="card-header-user flex flex-row p-5">
                         <div className="card-header-user-details flex flex-col items-end">
                             <div className="card-header-user-details-username text-left">
-                                <Text color="white"> {data?.[PostInstagramDic["user"]].username}@</Text>
+                                <Text size="sm" color="white">
+                                    {" "}
+                                    {data?.[PostInstagramDic["user"]].username}@
+                                </Text>
                             </div>
-                            <div className="card-header-user-details-time">
-                                <Text color="white">
-                                    {getformatDistanceToNowStrict(data?.[PostInstagramDic["time"]])}
+                            <div className="card-header-user-details-time ">
+                                <Text size="xs" color="white">
+                                    {getFormatDistanceToNowStrict(data?.[PostInstagramDic["time"]])}
                                 </Text>
                             </div>
                         </div>

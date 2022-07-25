@@ -2,6 +2,7 @@ export interface Details {
     id: number;
     title: string;
     slug: string;
+    description: string;
     platforms: string[];
     query: string;
     user_id: number;
@@ -10,6 +11,7 @@ export interface Details {
     last_update: string;
     created_at: string;
     updated_at: string;
+    logo: string;
 }
 
 export interface Result {

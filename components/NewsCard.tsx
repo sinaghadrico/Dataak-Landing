@@ -4,7 +4,7 @@ import { PostCard } from "models/post";
 import { Icon } from "@ui-components/Icon";
 import { PostNewsDic, SocialIconDic } from "utils/convertDic";
 import { getImageFromProxy } from "utils/getImageFromProxy";
-import { getformatDistanceToNowStrict } from "utils/getDateTime";
+import { getFormatDistanceToNowStrict } from "utils/getDateTime";
 interface PostCardProps {
     data: PostCard;
 }
@@ -35,28 +35,22 @@ export default function NewsCard({ data }: PostCardProps) {
                     <div className="card-header-user flex flex-row">
                         <div className="card-header-user-avatar ">
                             <CardAvatar>
-                                <Icon
-                                    // src={getImageFromProxy(
-                                    //     data?.[PostNewsDic["avatar"]],
-                                    //     "image",
-                                    // )}
-                                    src={data?.[PostNewsDic["avatar"]]}
-                                    width="64"
-                                    height="40"
-                                    className="avatar"
-                                />
+                                <Icon src={data?.[PostNewsDic["avatar"]]} width="64" height="40" className="avatar" />
                             </CardAvatar>
                         </div>
                         <div className="card-header-user-details flex flex-col px-2 ">
-                            <div className="card-header-user-details-username ">{data?.[PostNewsDic["username"]]}</div>
+                            <div className="card-header-user-details-username ">
+                                {" "}
+                                <Text size="sm">{data?.[PostNewsDic["username"]]}</Text>
+                            </div>
                             <div className="card-header-user-details-time">
-                                {getformatDistanceToNowStrict(data?.[PostNewsDic["time"]])}
+                                <Text size="xs"> {getFormatDistanceToNowStrict(data?.[PostNewsDic["time"]])} </Text>
                             </div>
                         </div>
                     </div>
                     <div className="card-header-type  flex flex-row justify-center items-center">
                         <Icon src={SocialIconDic["news"]} style={{ fontSize: "20px" }} className="pl-1" />
-                        {"خبر"}
+                        <Text size="sm"> {"خبر"} </Text>
                     </div>
                 </div>
                 <div className="card-description break-words py-5">{data?.[PostNewsDic["description"]]}</div>

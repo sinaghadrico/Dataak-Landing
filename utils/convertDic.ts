@@ -23,12 +23,17 @@ enum SocialIconBgColor {
     "telegram" = " radial-gradient(109.37% 109.37% at 93.51% 0%, #197EE6 0%, #005BB8 100%)",
 }
 
-
 enum ResourceTypeDic {
     "NEWS_AGENCY" = "news",
     "TELEGRAM_CHANNEL" = "telegram",
     "TWITTER_USER" = "twitter",
     "INSTAGRAM_USER" = "instagram",
+}
+enum ResourceAvatarDic {
+    "news" = "avatar",
+    "instagram" = "avatar_link",
+    "twitter" = "avatar_link",
+    "telegram" = "avatar",
 }
 
 enum PostTypeDic {
@@ -40,7 +45,7 @@ enum PostTypeDic {
 
 enum PostTwitterDic {
     "user" = "user",
-    "avatar"="user.profile_image_url",
+    "avatar" = "user.profile_image_url",
     "username" = "user.username",
     "time" = "time",
     "description" = "text",
@@ -50,7 +55,7 @@ enum PostTwitterDic {
 }
 enum PostInstagramDic {
     "user" = "user",
-    "avatar"="user.avatar",
+    "avatar" = "user.avatar",
     "username" = "user.username",
     "time" = "time",
     "description" = "text",
@@ -60,7 +65,7 @@ enum PostInstagramDic {
 }
 enum PostNewsDic {
     "user" = "user",
-    "avatar"="relation.avatar",
+    "avatar" = "relation.avatar",
     "username" = "relation.title",
     "time" = "time",
     "description" = "description",
@@ -71,7 +76,7 @@ enum PostNewsDic {
 
 enum PostTelegramDic {
     "user" = "user",
-    "avatar"="avatar",
+    "avatar" = "avatar",
     "username" = "username",
     "time" = "time",
     "description" = "description",
@@ -80,6 +85,16 @@ enum PostTelegramDic {
     "link" = "link",
 }
 
-
-
-export { SocialDic, SocialIconDic ,ResourceTypeDic,SocialIconColor ,SocialIconBgColor,PostTypeDic ,PostTwitterDic,PostInstagramDic,PostNewsDic,PostTelegramDic};
+export {
+    SocialDic,
+    SocialIconDic,
+    ResourceTypeDic,
+    SocialIconColor,
+    SocialIconBgColor,
+    ResourceAvatarDic,
+    PostTypeDic,
+    PostTwitterDic,
+    PostInstagramDic,
+    PostNewsDic,
+    PostTelegramDic,
+};

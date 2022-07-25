@@ -4,7 +4,7 @@ import { PostCard } from "models/post";
 import { Icon } from "@ui-components/Icon";
 import { PostTwitterDic, SocialIconDic } from "utils/convertDic";
 import { getImageFromProxy } from "utils/getImageFromProxy";
-import { getformatDistanceToNowStrict } from "utils/getDateTime";
+import { getFormatDistanceToNowStrict } from "utils/getDateTime";
 interface PostCardProps {
     data: PostCard;
 }
@@ -33,15 +33,15 @@ export default function TwitterCard({ data }: PostCardProps) {
                 <div className="card-header   flex flex-row items-start justify-between">
                     <div className="card-header-type  flex flex-row justify-center items-center">
                         <Icon src={SocialIconDic["twitter"]} style={{ fontSize: "20px" }} className="pl-1" />
-                        {"توییت"}
+                        <Text size="sm"> {"توییت"} </Text>
                     </div>
                     <div className="card-header-user flex flex-row">
                         <div className="card-header-user-details flex flex-col items-end">
                             <div className="card-header-user-details-username text-left">
-                                {data?.[PostTwitterDic["user"]].username}@
+                                <Text size="sm"> {data?.[PostTwitterDic["user"]].username}@ </Text>
                             </div>
                             <div className="card-header-user-details-time">
-                                {getformatDistanceToNowStrict(data?.[PostTwitterDic["time"]])}
+                                <Text size="xs">{getFormatDistanceToNowStrict(data?.[PostTwitterDic["time"]])}</Text>
                             </div>
                         </div>
                         <div className="card-header-user-avatar pr-2">

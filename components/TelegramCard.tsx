@@ -4,7 +4,7 @@ import { PostCard } from "models/post";
 import { Icon } from "@ui-components/Icon";
 import { PostTelegramDic, SocialIconDic } from "utils/convertDic";
 import { getImageFromProxy } from "utils/getImageFromProxy";
-import { getformatDistanceToNowStrict } from "utils/getDateTime";
+import { getFormatDistanceToNowStrict } from "utils/getDateTime";
 interface PostCardProps {
     data: PostCard;
 }
@@ -33,15 +33,15 @@ export default function TelegramCard({ data }: PostCardProps) {
                 <div className="card-header   flex flex-row items-start justify-between">
                     <div className="card-header-type  flex flex-row justify-center items-center">
                         <Icon src={SocialIconDic["telegram"]} style={{ fontSize: "20px" }} className="pl-1" />
-                        {"تلگرام"}
+                        <Text size="sm"> {"تلگرام"} </Text>
                     </div>
                     <div className="card-header-user flex flex-row">
                         <div className="card-header-user-details flex flex-col items-end">
                             <div className="card-header-user-details-username text-left">
-                                {data?.[PostTelegramDic["username"]]}@
+                                <Text size="sm"> {data?.[PostTelegramDic["username"]]}@ </Text>
                             </div>
                             <div className="card-header-user-details-time">
-                                {getformatDistanceToNowStrict(data?.[PostTelegramDic["time"]])}
+                                <Text size="xs"> {getFormatDistanceToNowStrict(data?.[PostTelegramDic["time"]])} </Text>
                             </div>
                         </div>
                         <div className="card-header-user-avatar pr-2">
