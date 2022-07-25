@@ -18,11 +18,12 @@ export default function LineChart({ data = [] }: LineChartProps) {
             <div className="chart-container">
                 <Chart padding={[5, 10, 30, 30]} data={data} autoFit renderer={"svg"}>
                     <Axis
-                        name="time"
+                        name="count"
                         label={{
                             formatter: (val) => {
-                                const { time } = getDateTime(val);
-                                return time;
+                                debugger;
+
+                                return val;
                             },
                             autoRotate: true,
                         }}

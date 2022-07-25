@@ -6,6 +6,7 @@ import type { Process } from "models/process";
 import type { Resource } from "models/resource";
 import type { Sentiment } from "models/sentiment";
 import type { Subjects } from "models/subjects";
+import { getDateTime } from "utils/getDateTime";
 import useRequest from "utils/useRequest";
 
 const useData = () => {
@@ -43,9 +44,11 @@ const useData = () => {
                 .get(`process`)
                 .then((response: any) => {
                     const data: Process[] = Object.entries(response.result.data).map(([key, value]: any) => {
+                        const { time } = getDateTime(key)
+                     
                         return {
                             count: value,
-                            time: key,
+                            time:  time,
                         };
                     });
 
