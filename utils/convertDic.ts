@@ -60,7 +60,7 @@ enum PostInstagramDic {
 }
 enum PostNewsDic {
     "user" = "user",
-    "avatar"="relation.profile_image_url",
+    "avatar"="relation.avatar",
     "username" = "relation.title",
     "time" = "time",
     "description" = "description",
@@ -71,7 +71,7 @@ enum PostNewsDic {
 
 enum PostTelegramDic {
     "user" = "user",
-    "avatar"="user.profile_image_url",
+    "avatar"="avatar",
     "username" = "username",
     "time" = "time",
     "description" = "description",

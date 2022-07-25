@@ -27,6 +27,7 @@ export default function NewsCard({ data }: PostCardProps) {
             max-height: 150px;
         }
     `;
+
     return (
         <WrapperCardContainer className=" flex flex-col justify-center p-5">
             <CardBox className=" flex flex-col  p-5">
@@ -35,10 +36,11 @@ export default function NewsCard({ data }: PostCardProps) {
                         <div className="card-header-user-avatar ">
                             <CardAvatar>
                                 <Icon
-                                    src={getImageFromProxy(
-                                        "https://api.dataak.com/media/images/news/agency/35",
-                                        "image",
-                                    )}
+                                    // src={getImageFromProxy(
+                                    //     data?.[PostNewsDic["avatar"]],
+                                    //     "image",
+                                    // )}
+                                    src={data?.[PostNewsDic["avatar"]]}
                                     width="64"
                                     height="40"
                                     className="avatar"

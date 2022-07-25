@@ -47,10 +47,7 @@ export default function TelegramCard({ data }: PostCardProps) {
                         <div className="card-header-user-avatar pr-2">
                             <CardAvatar>
                                 <Icon
-                                    src={getImageFromProxy(
-                                        "https://api.dataak.com/media/images/news/agency/35",
-                                        "image",
-                                    )}
+                                    src={getImageFromProxy(data?.[PostTelegramDic["avatar"]], "avatar")}
                                     width="40"
                                     height="40"
                                     className="avatar"

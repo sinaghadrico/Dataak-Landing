@@ -5,6 +5,7 @@ import { Icon } from "@ui-components/Icon";
 import { PostInstagramDic, SocialIconDic } from "utils/convertDic";
 import { getImageFromProxy } from "utils/getImageFromProxy";
 import { getformatDistanceToNowStrict } from "utils/getDateTime";
+import logoAvatar from "assets/img/avatar.jpg";
 interface PostCardProps {
     data: PostCard;
 }
@@ -30,17 +31,24 @@ export default function InstagramCard({ data }: PostCardProps) {
         }
         .card-header {
             width: 100%;
-            height: 168px;
+            min-height: 168px;
             background-repeat: no-repeat;
+            background-size: cover;
         }
     `;
+    const imageGallery = data?.["images"] ? JSON?.parse(data?.["images"]) || [] : [];
+
+    const srcImage =
+        imageGallery?.candidates?.length > 0
+            ? imageGallery?.candidates?.filter((x) => x.width === 640)?.[0]?.url
+            : logoAvatar;
     return (
         <WrapperCardContainer className=" flex flex-col justify-center p-5">
             <CardBox className=" flex flex-col  ">
                 <div
                     className="card-header   flex flex-row items-start justify-between"
                     style={{
-                        backgroundImage: `url(${"https://api.dataak.com/media/images/news/agency/35"})`,
+                        backgroundImage: `url(${getImageFromProxy(srcImage, "image")})`,
                     }}
                 >
                     <div className="card-header-type  flex flex-row justify-center items-center p-5">
@@ -66,10 +74,7 @@ export default function InstagramCard({ data }: PostCardProps) {
                         <div className="card-header-user-avatar pr-2">
                             <CardAvatar>
                                 <Icon
-                                    src={getImageFromProxy(
-                                        "https://api.dataak.com/media/images/news/agency/35",
-                                        "image",
-                                    )}
+                                    src={getImageFromProxy(data?.[PostInstagramDic["user"]]?.avatar, "avatar")}
                                     width="40"
                                     height="40"
                                     className="avatar"

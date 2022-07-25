@@ -1,13 +1,14 @@
 
+import logoAvatar from "assets/img/avatar.jpg";
 export const getImageFromProxy = (address, type, noProxy=false) => {
   let url = null;
-  if (!address) return null;
+  if (!address) return logoAvatar;
   if (type === "avatar") return getAvatarAddress(address);
  
   try {
     url = `https://cdn.dataak.com/download?url=${window.btoa(address)}${noProxy ? "&no_proxy=1" : ""}`;
   } catch (error) {
-    url = null;
+    url = logoAvatar;
   }
 
   return url;
@@ -15,11 +16,11 @@ export const getImageFromProxy = (address, type, noProxy=false) => {
 
 const getAvatarAddress = (avatar) => {
   const imagesStaticUrl = "https://f002.backblazeb2.com/file/all-gather-media/";
-  if (!avatar) {
+  if (avatar) {
     const avatarUrl = avatar.startsWith("http") ? avatar : imagesStaticUrl + avatar;
     return avatarUrl?.replace("_normal", "");
   } else {
-    return null;
+    return logoAvatar;
   }
 };
 
