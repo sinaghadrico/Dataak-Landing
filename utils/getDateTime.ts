@@ -1,4 +1,4 @@
-import { format } from "date-fns";
+import { format ,formatDistanceToNowStrict} from "date-fns";
 import { faIR } from 'date-fns/locale'
 const getDateTime = (dateTime) => {
 
@@ -8,5 +8,9 @@ const getDateTime = (dateTime) => {
 
   return { date, time };
 };
+const getformatDistanceToNowStrict = (dateTime) => {
+  const distance =   formatDistanceToNowStrict(new Date(dateTime), { addSuffix: true ,locale: faIR})
+  return distance;
+};
 
-export { getDateTime };
+export { getDateTime,getformatDistanceToNowStrict };

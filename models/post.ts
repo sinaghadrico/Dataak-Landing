@@ -255,4 +255,5 @@ export interface PostCard {
 
     link: string;
     id: string;
+    user:User
 }

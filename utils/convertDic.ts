@@ -24,12 +24,62 @@ enum SocialIconBgColor {
 }
 
 
-enum TesourceTypeDic {
+enum ResourceTypeDic {
     "NEWS_AGENCY" = "news",
     "TELEGRAM_CHANNEL" = "telegram",
     "TWITTER_USER" = "twitter",
     "INSTAGRAM_USER" = "instagram",
 }
 
+enum PostTypeDic {
+    "NEWS_POST" = "news",
+    "TELEGRAM_POST" = "telegram",
+    "TWITTER_POST" = "twitter",
+    "INSTAGRAM_POST" = "instagram",
+}
 
-export { SocialDic, SocialIconDic ,TesourceTypeDic,SocialIconColor ,SocialIconBgColor};
+enum PostTwitterDic {
+    "user" = "user",
+    "avatar"="user.profile_image_url",
+    "username" = "user.username",
+    "time" = "time",
+    "description" = "text",
+    "like_count" = "favorit_count",
+    "comment_count" = "retweet_count",
+    "link" = "link",
+}
+enum PostInstagramDic {
+    "user" = "user",
+    "avatar"="user.avatar",
+    "username" = "user.username",
+    "time" = "time",
+    "description" = "text",
+    "like_count" = "like_count",
+    "comment_count" = "comment_count",
+    "link" = "link",
+}
+enum PostNewsDic {
+    "user" = "user",
+    "avatar"="relation.profile_image_url",
+    "username" = "relation.title",
+    "time" = "time",
+    "description" = "description",
+    "like_count" = "like_count",
+    "comment_count" = "comment_count",
+    "link" = "link",
+}
+
+enum PostTelegramDic {
+    "user" = "user",
+    "avatar"="user.profile_image_url",
+    "username" = "username",
+    "time" = "time",
+    "description" = "description",
+    "view_count" = "view_count",
+    "comment_count" = "comment_count",
+    "link" = "link",
+}
+
+
+
+export { SocialDic, SocialIconDic ,ResourceTypeDic,SocialIconColor ,SocialIconBgColor,PostTypeDic ,PostTwitterDic,PostInstagramDic,PostNewsDic,PostTelegramDic};

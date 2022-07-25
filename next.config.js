@@ -11,7 +11,7 @@ const nextConfig = {
         removeConsole: true,
     },
     images: {
-        domains: ['cdn.dataak.com'],
+        domains: ['cdn.dataak.com',"f002.backblazeb2.com"],
       },
 };
 

@@ -4,7 +4,7 @@ import useData from "services/useData";
 import useSWR from "swr";
 import { Icon } from "@ui-components/Icon";
 import { getImageFromProxy } from "utils/getImageFromProxy";
-import { SocialIconColor, SocialIconDic, TesourceTypeDic } from "utils/convertDic";
+import { SocialIconColor, SocialIconDic, ResourceTypeDic } from "utils/convertDic";
 import { Text } from "@ui-components/Text";
 
 interface ResourcesProps {
@@ -28,9 +28,9 @@ export default function Resources({ total }: ResourcesProps) {
                         {data?.map((resource) => (
                             <ResourceAvatar>
                                 <Icon
-                                    src={SocialIconDic[TesourceTypeDic[resource?.resource_type]]}
+                                    src={SocialIconDic[ResourceTypeDic[resource?.resource_type]]}
                                     className="social-icon"
-                                    style={{ color: SocialIconColor[TesourceTypeDic[resource?.resource_type]] }}
+                                    style={{ color: SocialIconColor[ResourceTypeDic[resource?.resource_type]] }}
                                 />
                                 <Icon
                                     src={getImageFromProxy(
