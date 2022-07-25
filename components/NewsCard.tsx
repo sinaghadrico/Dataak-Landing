@@ -31,32 +31,30 @@ export default function NewsCard({ data }: PostCardProps) {
         <WrapperCardContainer className=" flex flex-col justify-center p-5">
             <CardBox className=" flex flex-col  p-5">
                 <div className="card-header   flex flex-row items-start justify-between">
-                    <div className="card-header-type  flex flex-row justify-center items-center">
-                        <Icon src={SocialIconDic["news"]} style={{ fontSize: "20px" }} className="pl-1" />
-                        {"خبر"}
-                    </div>
                     <div className="card-header-user flex flex-row">
-                        <div className="card-header-user-details flex flex-col items-end">
-                            <div className="card-header-user-details-username text-left">
-                                {data?.[PostNewsDic["username"]]}
-                            </div>
-                            <div className="card-header-user-details-time">
-                                {getformatDistanceToNowStrict(data?.[PostNewsDic["time"]])}
-                            </div>
-                        </div>
-                        <div className="card-header-user-avatar pr-2">
+                        <div className="card-header-user-avatar ">
                             <CardAvatar>
                                 <Icon
                                     src={getImageFromProxy(
                                         "https://api.dataak.com/media/images/news/agency/35",
                                         "image",
                                     )}
-                                    width="40"
+                                    width="64"
                                     height="40"
                                     className="avatar"
                                 />
                             </CardAvatar>
                         </div>
+                        <div className="card-header-user-details flex flex-col px-2 ">
+                            <div className="card-header-user-details-username ">{data?.[PostNewsDic["username"]]}</div>
+                            <div className="card-header-user-details-time">
+                                {getformatDistanceToNowStrict(data?.[PostNewsDic["time"]])}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card-header-type  flex flex-row justify-center items-center">
+                        <Icon src={SocialIconDic["news"]} style={{ fontSize: "20px" }} className="pl-1" />
+                        {"خبر"}
                     </div>
                 </div>
                 <div className="card-description break-words py-5">{data?.[PostNewsDic["description"]]}</div>
@@ -82,6 +80,6 @@ const CardAvatar = styled.div`
     position: relative;
     .avatar {
         border: 1px solid #f7f7f7;
-        border-radius: 50%;
+        border-radius: 20px;
     }
 `;
