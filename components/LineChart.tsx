@@ -15,14 +15,7 @@ export default function LineChart({ data = [] }: LineChartProps) {
 
     const chart = useMemo(
         () => (
-            <div
-                style={{
-                    minWidth: "320px",
-                    maxWidth: "500px",
-                    width: "100%",
-                    height: "100%",
-                }}
-            >
+            <div className="chart-container">
                 <Chart padding={[5, 10, 30, 30]} data={data} autoFit renderer={"svg"}>
                     <Axis
                         name="time"
@@ -76,5 +69,18 @@ const WrapperContainer = styled.div`
     height: 226px;
     * {
         font-family: "IranYekanNum";
+    }
+    .chart-container {
+        width: 100%;
+        height: 100%;
+
+        @media (min-width: 760px) {
+            min-width: 320px;
+            max-width: 500px;
+        }
+        @media (max-width: 760px) {
+            min-width: 180px;
+            max-width: 500px;
+        }
     }
 `;
