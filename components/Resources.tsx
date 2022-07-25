@@ -22,7 +22,7 @@ export default function Resources({ total }: ResourcesProps) {
                 <Text.p color="white">منبع</Text.p>
             </TotalBox>
             <Box style={{ paddingRight: "96px" }}>
-                <div className="flex flex-col px-5">
+                <div className="flex flex-col px-10">
                     <Text>فعال‌ترین‌ها</Text>
                     <div className="grid grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-3 md:gap-2 lg:gap-11 pt-5 ">
                         {data?.map((resource) => (
@@ -39,6 +39,7 @@ export default function Resources({ total }: ResourcesProps) {
                                     )}
                                     width="55"
                                     height="55"
+                                    layout="fixed"
                                     className="avatar"
                                 />
                             </ResourceAvatar>

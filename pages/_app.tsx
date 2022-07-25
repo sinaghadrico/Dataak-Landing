@@ -175,11 +175,11 @@ export default function MyApp({ Component, pageProps }) {
           }
   
           ::-webkit-scrollbar-thumb {
-              background: ${theme.colors["blue"]};
+              background: ${theme.colors["purple"]};
           }
   
           ::-webkit-scrollbar-thumb:hover {
-              background:  ${theme.colors["blue"]};
+              background:  ${theme.colors["purple"]};
           }
          
 
