@@ -45,9 +45,18 @@ export default function Header() {
                 )}
             </div>
 
-            <Link href={"/form"} className="flex justify-end basis-1/2 ">
+            {/* <Link href={"/form"} className="flex justify-end basis-1/2 ">
                 <Button>گزارش کسب‌وکار خودت رو داشته باش!</Button>
-            </Link>
+            </Link> */}
+            <a
+                href={
+                    "https://dataak.com/%d8%a7%d8%b1%d8%aa%d8%a8%d8%a7%d8%b7-%d8%a8%d8%a7-%d8%af%db%8c%d8%aa%d8%a7%da%a9/"
+                }
+                target="_blank"
+                className="flex justify-end basis-1/2 "
+            >
+                <Button>گزارش کسب‌وکار خودت رو داشته باش!</Button>
+            </a>
         </CustomHeader>
     );
 }

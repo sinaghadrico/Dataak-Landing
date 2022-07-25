@@ -62,12 +62,12 @@ export default function InstagramCard({ data }: PostCardProps) {
         <WrapperCardContainer className=" flex flex-col justify-center p-5">
             <CardBox className=" flex flex-col  ">
                 <div
-                    className="card-header   flex flex-row items-start justify-between"
+                    className="card-header   flex flex-row items-start justify-between py-4 px-4"
                     style={{
                         backgroundImage: `url(${getImageFromProxy(srcImage, "image")})`,
                     }}
                 >
-                    <div className="card-header-type  flex flex-row justify-center items-center m-5">
+                    <div className="card-header-type  flex flex-row justify-center items-center ">
                         <Icon
                             src={SocialIconDic["instagram"]}
                             style={{ fontSize: "20px", color: "white" }}
@@ -79,7 +79,7 @@ export default function InstagramCard({ data }: PostCardProps) {
                             {"اینستاگرام"}
                         </Text>
                     </div>
-                    <div className="card-header-user flex flex-row p-5">
+                    <div className="card-header-user flex flex-row ">
                         <div className="card-header-user-details flex flex-col items-end">
                             <div className="card-header-user-details-username text-left">
                                 <Text size="sm" color="white">
@@ -97,8 +97,9 @@ export default function InstagramCard({ data }: PostCardProps) {
                             <CardAvatar>
                                 <Icon
                                     src={getImageFromProxy(data?.[PostInstagramDic["user"]]?.avatar, "avatar")}
-                                    width="40"
-                                    height="40"
+                                    width="40px"
+                                    height="40px"
+                                    layout="fixed"
                                     className="avatar"
                                 />
                             </CardAvatar>
