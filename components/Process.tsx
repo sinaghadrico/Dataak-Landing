@@ -4,6 +4,7 @@ import useData from "services/useData";
 import useSWR from "swr";
 import LineChart from "./LineChart";
 import { Text } from "@ui-components/Text";
+import { commaSeparator } from "utils/commaSeparator";
 
 interface ProcessProps {
     total: number;
@@ -16,8 +17,12 @@ export default function Process({ total }: ProcessProps) {
     return (
         <div className=" flex flex-row justify-center p-5 ">
             <TotalBox style={{ marginLeft: "-96px" }}>
-                <Text.h1 color="white">{total}</Text.h1>
-                <Text.p color="white">مطلب </Text.p>
+                <Text size="2xl" color="white">
+                    {total ? commaSeparator(total) : "-"}
+                </Text>
+                <Text size="base" color="white">
+                    مطلب{" "}
+                </Text>
             </TotalBox>
             <Box style={{ paddingRight: "96px" }}>
                 <LineChart data={data} />

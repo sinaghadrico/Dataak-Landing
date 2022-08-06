@@ -20,10 +20,10 @@ export default function Home() {
             </Head>
 
             <div className="flex flex-col md:flex-col lg:flex-col w-full self-center  ">
-                {/* <Header />
+                <Header />
                 <Info />
                 <Posts />
-                <SocialHistory /> */}
+                <SocialHistory />
             </div>
         </div>
     );

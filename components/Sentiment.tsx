@@ -9,7 +9,10 @@ interface SentimentProps {
 export default function Sentiment({ data }: SentimentProps) {
     return (
         <div className=" flex flex-col justify-center">
-            <Text> تحلیل احساسات</Text>
+            <Text size="xs" className="pb-9">
+                {" "}
+                تحلیل احساسات
+            </Text>
 
             <Range value={Number(Math.floor(data?.sentiment * 100))} />
         </div>

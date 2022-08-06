@@ -1,7 +1,8 @@
 import logoAvatar from "assets/img/avatar.jpg";
 export const getImageFromProxy = (address, type, noProxy = false) => {
     let url = null;
-    if (!address) return logoAvatar;
+
+    if (!address ||  address==="") return logoAvatar;
     if (type === "avatar") return getAvatarAddress(address);
 
     try {
@@ -15,12 +16,17 @@ export const getImageFromProxy = (address, type, noProxy = false) => {
 
 const getAvatarAddress = (avatar) => {
     const imagesStaticUrl = "https://f002.backblazeb2.com/file/all-gather-media/";
-    if (avatar) {
-        const avatarUrl = avatar.startsWith("http") ? avatar : imagesStaticUrl + avatar;
-        return avatarUrl?.replace("_normal", "");
-    } else {
+    try {
+        if (avatar) {
+            const avatarUrl = avatar.startsWith("http") ? avatar : imagesStaticUrl + avatar;
+            return avatarUrl?.replace("_normal", "");
+        } else {
+            return logoAvatar;
+        }
+    } catch (error) {
         return logoAvatar;
     }
+   
 };
 
 export const getImageFromCache = (_address, noProxy) => {

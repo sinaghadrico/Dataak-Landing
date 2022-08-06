@@ -26,7 +26,10 @@ export default function WordCloud({ data }: WordCloudProps) {
 
     return (
         <WrapperContainer className=" flex flex-col justify-center">
-            <Text className="py-2"> ابر کلمات</Text>
+            <Text size="xs" className="py-4">
+                {" "}
+                ابر کلمات
+            </Text>
             <div className="Tag-cloud-wrapper flex flex-col justify-center">
                 <TagCloud minSize={14} maxSize={32} tags={tags} colorOptions={options} />
             </div>

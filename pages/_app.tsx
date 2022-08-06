@@ -23,6 +23,7 @@ const colors = {
     red: "#EB5757",
     yellow: "#FFD335",
     gray: "gray",
+    subTitle: "#454545",
     background: "#F7F7F7",
 };
 const theme = {
@@ -140,13 +141,13 @@ const theme = {
     // text-9xl	font-size: 8rem; /* 128px */
     // line-height: 1;
     fonts: {
-        xs: { size: ".75rem", weight: "300", style: "normal" },
-        sm: { size: ".875rem", weight: "400", style: "normal" },
-        tiny: { size: ".875rem", weight: "700", style: "normal" },
-        base: { size: "1rem", weight: "600", style: "normal" },
+        xs: { size: ".75rem", weight: "700", style: "normal" },
+        sm: { size: ".875rem", weight: "700", style: "normal" },
+        tiny: { size: ".875rem", weight: "400", style: "normal" },
+        base: { size: "1rem", weight: "700", style: "normal" },
         lg: { size: "1.125rem", weight: "700", style: "normal" },
         xl: { size: "1.25rem", weight: "400", style: "normal" },
-        "2xl": { size: "1.5rem", weight: "700", style: "normal" },
+        "2xl": { size: "1.5rem", weight: "800", style: "normal" },
         "3xl": { size: "1.875rem", weight: "700", style: "normal" },
         "4xl": { size: "2.25rem", weight: "900", style: "normal" },
         "5xl": { size: "3rem", weight: "900", style: "normal" },

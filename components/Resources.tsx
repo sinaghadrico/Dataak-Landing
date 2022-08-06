@@ -6,6 +6,7 @@ import { Icon } from "@ui-components/Icon";
 import { getImageFromProxy } from "utils/getImageFromProxy";
 import { SocialIconColor, SocialIconDic, ResourceTypeDic, ResourceAvatarDic } from "utils/convertDic";
 import { Text } from "@ui-components/Text";
+import { commaSeparator } from "utils/commaSeparator";
 
 interface ResourcesProps {
     total: number;
@@ -18,8 +19,12 @@ export default function Resources({ total }: ResourcesProps) {
     return (
         <div className=" flex flex-row justify-center p-5 ">
             <TotalBox style={{ marginLeft: "-96px" }}>
-                <Text.h1 color="white">{total}</Text.h1>
-                <Text.p color="white">منبع</Text.p>
+                <Text size="2xl" color="white">
+                    {total ? commaSeparator(total) : "-"}
+                </Text>
+                <Text size="base" color="white">
+                    منبع
+                </Text>
             </TotalBox>
             <Box style={{ paddingRight: "96px" }}>
                 <div className="flex flex-col px-10">

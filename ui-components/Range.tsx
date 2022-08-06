@@ -10,7 +10,7 @@ interface RangeProps {
 }
 
 export function Range({ value = 0 }: RangeProps) {
-    const persent: number =
+    const percent: number =
         value > 0 ? Number(50 - Math.floor(Number(value) / 2)) : Number(50 + Math.floor((Number(value) * -1) / 2));
 
     const icon = value > 0 ? "ri-emotion-happy-line" : "ri-emotion-normal-line";
@@ -29,13 +29,13 @@ export function Range({ value = 0 }: RangeProps) {
                 <CustomWrapperRangePointer
                     className="pointer"
                     style={{
-                        right: persent + "%",
+                        right: percent + "%",
                     }}
                 ></CustomWrapperRangePointer>
                 <CustomWrapperRangeValue
                     className="value"
                     style={{
-                        right: `calc(${persent}% - 8px)`,
+                        right: `calc(${percent}% - 8px)`,
                     }}
                 >
                     <Icon src={icon} />
@@ -55,7 +55,7 @@ const CustomWrapperRange = memo(styled.div`
 `);
 const CustomWrapperRangeLine = memo(styled.div`
     height: 6px;
-    margin: 0 10px;
+    margin: 0 0px;
     border-radius: 8px;
     /* transform: rotate(-180deg); */
     background: linear-gradient(90deg, #f16063 0%, #f7936f 49.48%, #17ce7f 100%);

@@ -18,7 +18,7 @@ export default function SocialHistory() {
 
     return (
         <Container className="container-footer">
-            <div className=" flex flex-row flex-wrap   justify-center mt-10">
+            <div className=" flex flex-row flex-wrap items-baseline   justify-center mt-10 mb-28">
                 <SocialBox
                     type="news"
                     dataSubject={dataSubjects?.news}

@@ -24,7 +24,7 @@ export default function NewsCard({ data }: PostCardProps) {
         .card-description {
             text-overflow: ellipsis;
             overflow: hidden;
-            max-height: 150px;
+            max-height: 60px;
         }
     `;
 
@@ -44,16 +44,21 @@ export default function NewsCard({ data }: PostCardProps) {
                                 <Text size="sm">{data?.[PostNewsDic["username"]]}</Text>
                             </div>
                             <div className="card-header-user-details-time">
-                                <Text size="xs"> {getFormatDistanceToNowStrict(data?.[PostNewsDic["time"]])} </Text>
+                                <Text size="xs" color="subTitle">
+                                    {" "}
+                                    {getFormatDistanceToNowStrict(data?.[PostNewsDic["time"]])}{" "}
+                                </Text>
                             </div>
                         </div>
                     </div>
                     <div className="card-header-type  flex flex-row justify-center items-center">
                         <Icon src={SocialIconDic["news"]} style={{ fontSize: "20px" }} className="pl-1" />
-                        <Text size="sm"> {"خبر"} </Text>
+                        <Text size="xs"> {"خبر"} </Text>
                     </div>
                 </div>
-                <div className="card-description break-words py-5">{data?.[PostNewsDic["description"]]}</div>
+                <Text size="tiny" className="card-description break-words py-5">
+                    {data?.[PostNewsDic["description"]]}
+                </Text>
                 {/* <div className="card-options flex flex-row pt-4">
                     <div className="card-options-item flex flex-row pl-9">
                         <Icon src="ri-heart-3-line" style={{ color: "#9CAEBB" }} />

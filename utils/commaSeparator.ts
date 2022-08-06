@@ -1,4 +1,4 @@
-export const commaSeperator = (digit) => {
+export const commaSeparator = (digit) => {
     if (!digit || digit === 0) return 0;
     return digit?.toString()?.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };

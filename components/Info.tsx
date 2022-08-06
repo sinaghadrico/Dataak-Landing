@@ -16,8 +16,8 @@ export default function Info() {
             </div>
 
             <div className="flex flex-row flex-wrap  justify-center mt-10">
-                <Process total={+data?.post_count} />
-                <Resources total={+data?.resource_count} />
+                <Process total={Number(+data?.post_count)} />
+                <Resources total={Number(+data?.resource_count)} />
             </div>
         </div>
     );

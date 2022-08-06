@@ -1,3 +1,4 @@
+import { Text } from "@ui-components/Text";
 import { KeyValueGrade } from "models/grade";
 import styled from "styled-components";
 import useSWR from "swr";
@@ -14,7 +15,7 @@ export default function Grade({ data, type }: GradeProps) {
             <GradientText style={{ background: SocialIconBgColor[type] }}>
                 {`${Math.floor(data?.calculated * 100) || 0}%`}
             </GradientText>
-            سهم {dataDetails?.title} از این بستر
+            <Text size="sm"> سهم {dataDetails?.title || "-"} از این بستر </Text>
         </div>
     );
 }

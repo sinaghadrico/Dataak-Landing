@@ -38,7 +38,10 @@ export default function Posts() {
                 >
                     <Icon src="ri-add-line" style={{ color: "#6B86F9", fontSize: 20 }} />
 
-                    <Text color="purple"> مشاهده بیشتر</Text>
+                    <Text size="xs" color="purple">
+                        {" "}
+                        مشاهده بیشتر
+                    </Text>
                 </div>
             )}
         </div>

@@ -24,7 +24,7 @@ export default function TelegramCard({ data }: PostCardProps) {
         .card-description {
             text-overflow: ellipsis;
             overflow: hidden;
-            max-height: 150px;
+            max-height: 60px;
         }
     `;
     return (
@@ -33,7 +33,7 @@ export default function TelegramCard({ data }: PostCardProps) {
                 <div className="card-header   flex flex-row items-start justify-between">
                     <div className="card-header-type  flex flex-row justify-center items-center">
                         <Icon src={SocialIconDic["telegram"]} style={{ fontSize: "20px" }} className="pl-1" />
-                        <Text size="sm"> {"تلگرام"} </Text>
+                        <Text size="xs"> {"تلگرام"} </Text>
                     </div>
                     <div className="card-header-user flex flex-row">
                         <div className="card-header-user-details flex flex-col items-end">
@@ -41,7 +41,10 @@ export default function TelegramCard({ data }: PostCardProps) {
                                 <Text size="sm"> {data?.[PostTelegramDic["username"]]}@ </Text>
                             </div>
                             <div className="card-header-user-details-time">
-                                <Text size="xs"> {getFormatDistanceToNowStrict(data?.[PostTelegramDic["time"]])} </Text>
+                                <Text size="xs" color="subTitle">
+                                    {" "}
+                                    {getFormatDistanceToNowStrict(data?.[PostTelegramDic["time"]])}{" "}
+                                </Text>
                             </div>
                         </div>
                         <div className="card-header-user-avatar pr-2">
@@ -56,19 +59,21 @@ export default function TelegramCard({ data }: PostCardProps) {
                         </div>
                     </div>
                 </div>
-                <div className="card-description break-words py-5">{data?.[PostTelegramDic["description"]]}</div>
+                <Text size="tiny" className="card-description break-words py-5">
+                    {data?.[PostTelegramDic["description"]]}
+                </Text>
                 <div className="card-options flex flex-row pt-4">
-                    <div className="card-options-item flex flex-row pl-9">
+                    <div className="card-options-item flex flex-row pl-9 items-center">
                         <Icon src="ri-eye-line" style={{ color: "#9CAEBB" }} />
-                        <div className="card-options-item-value pr-1" style={{ color: "#777777" }}>
+                        <Text size="xs" className="card-options-item-value pr-1" style={{ color: "#777777" }}>
                             {data?.[PostTelegramDic["view_count"]]}
-                        </div>
+                        </Text>
                     </div>
-                    <div className="card-options-item flex flex-row pl-9">
+                    <div className="card-options-item flex flex-row pl-9  items-center">
                         <Icon src="ri-discuss-line" style={{ color: "#9CAEBB" }} />
-                        <div className="card-options-item-value pr-1" style={{ color: "#777777" }}>
+                        <Text size="xs" className="card-options-item-value pr-1" style={{ color: "#777777" }}>
                             {data?.[PostTelegramDic["comment_count"]]}
-                        </div>
+                        </Text>
                     </div>
                 </div>
             </CardBox>

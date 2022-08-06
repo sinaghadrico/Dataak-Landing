@@ -27,26 +27,27 @@ export default function InstagramCard({ data }: PostCardProps) {
         .card-description {
             text-overflow: ellipsis;
             overflow: hidden;
-            max-height: 150px;
+            max-height: 60px;
         }
         .card-header {
             width: 100%;
             min-height: 168px;
             background-repeat: no-repeat;
             background-size: cover;
+            box-shadow: inset 0px 73px 20px 0px rgb(0 0 0 / 60%);
         }
         .card-header-type {
-            background: #9caebbc2;
+            /* background: #9caebbc2; */
             border-radius: 5px;
             padding: 3px 5px;
         }
         .card-header-user-details-username {
-            background: #9caebbc2;
+            /* background: #9caebbc2; */
             border-radius: 5px;
             padding: 3px 5px;
         }
         .card-header-user-details-time {
-            background: #9caebbc2;
+            /* background: #9caebbc2; */
             border-radius: 5px;
             padding: 3px 5px;
             margin-top: 2px;
@@ -74,7 +75,7 @@ export default function InstagramCard({ data }: PostCardProps) {
                             className="pl-1"
                         />
 
-                        <Text color="white" size="sm">
+                        <Text color="white" size="xs">
                             {" "}
                             {"اینستاگرام"}
                         </Text>
@@ -107,20 +108,22 @@ export default function InstagramCard({ data }: PostCardProps) {
                     </div>
                 </div>
                 <div className="card-options flex flex-row p-5">
-                    <div className="card-options-item flex flex-row pl-9">
+                    <div className="card-options-item flex flex-row pl-9 items-center">
                         <Icon src="ri-heart-3-line" style={{ color: "#9CAEBB" }} />
-                        <div className="card-options-item-value pr-1" style={{ color: "#777777" }}>
+                        <Text size="xs" className="card-options-item-value pr-1" style={{ color: "#777777" }}>
                             {data?.[PostInstagramDic["like_count"]]}
-                        </div>
+                        </Text>
                     </div>
-                    <div className="card-options-item flex flex-row pl-9">
+                    <div className="card-options-item flex flex-row pl-9 items-center">
                         <Icon src="ri-discuss-line" style={{ color: "#9CAEBB" }} />
-                        <div className="card-options-item-value pr-1" style={{ color: "#777777" }}>
+                        <Text size="xs" className="card-options-item-value pr-1" style={{ color: "#777777" }}>
                             {data?.[PostInstagramDic["comment_count"]]}
-                        </div>
+                        </Text>
                     </div>
                 </div>
-                <div className="card-description break-words px-5 mb-3">{data?.[PostInstagramDic["description"]]}</div>
+                <Text size="tiny" className="card-description break-words px-5 mb-3">
+                    {data?.[PostInstagramDic["description"]]}
+                </Text>
             </CardBox>
         </WrapperCardContainer>
     );

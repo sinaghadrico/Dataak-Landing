@@ -24,7 +24,7 @@ export default function TwitterCard({ data }: PostCardProps) {
         .card-description {
             text-overflow: ellipsis;
             overflow: hidden;
-            max-height: 150px;
+            max-height: 60px;
         }
     `;
     return (
@@ -33,7 +33,7 @@ export default function TwitterCard({ data }: PostCardProps) {
                 <div className="card-header   flex flex-row items-start justify-between">
                     <div className="card-header-type  flex flex-row justify-center items-center">
                         <Icon src={SocialIconDic["twitter"]} style={{ fontSize: "20px" }} className="pl-1" />
-                        <Text size="sm"> {"توییت"} </Text>
+                        <Text size="xs"> {"توییت"} </Text>
                     </div>
                     <div className="card-header-user flex flex-row">
                         <div className="card-header-user-details flex flex-col items-end">
@@ -41,7 +41,9 @@ export default function TwitterCard({ data }: PostCardProps) {
                                 <Text size="sm"> {data?.[PostTwitterDic["user"]].username}@ </Text>
                             </div>
                             <div className="card-header-user-details-time">
-                                <Text size="xs">{getFormatDistanceToNowStrict(data?.[PostTwitterDic["time"]])}</Text>
+                                <Text size="xs" color="subTitle">
+                                    {getFormatDistanceToNowStrict(data?.[PostTwitterDic["time"]])}
+                                </Text>
                             </div>
                         </div>
                         <div className="card-header-user-avatar pr-2">
@@ -56,22 +58,21 @@ export default function TwitterCard({ data }: PostCardProps) {
                         </div>
                     </div>
                 </div>
-                <div className="card-description break-words py-5">
-                    {data?.[PostTwitterDic["description"]] ||
-                        "بسته پرتخفیف همراه اول به مناسبت اعیاد قربان ‌و غدیر بفرست برای دوستانت"}
-                </div>
+                <Text size="tiny" className="card-description break-words py-5">
+                    {data?.[PostTwitterDic["description"]] || ""}
+                </Text>
                 <div className="card-options flex flex-row pt-4">
-                    <div className="card-options-item flex flex-row pl-9">
+                    <div className="card-options-item flex flex-row pl-9 items-center">
                         <Icon src="ri-heart-3-line" style={{ color: "#9CAEBB" }} />
-                        <div className="card-options-item-value pr-1" style={{ color: "#777777" }}>
+                        <Text size="xs" className="card-options-item-value pr-1" style={{ color: "#777777" }}>
                             {data?.[PostTwitterDic["like_count"]]}
-                        </div>
+                        </Text>
                     </div>
-                    <div className="card-options-item flex flex-row pl-9">
+                    <div className="card-options-item flex flex-row pl-9 items-center">
                         <Icon src="ri-discuss-line" style={{ color: "#9CAEBB" }} />
-                        <div className="card-options-item-value pr-1" style={{ color: "#777777" }}>
+                        <Text size="xs" className="card-options-item-value pr-1" style={{ color: "#777777" }}>
                             {data?.[PostTwitterDic["comment_count"]]}
-                        </div>
+                        </Text>
                     </div>
                 </div>
             </CardBox>

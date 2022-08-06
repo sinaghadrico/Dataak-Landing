@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import React, { useMemo, useRef } from "react";
 import { Chart, LineAdvance, Axis, Tooltip, Interaction } from "bizcharts";
-import { getDateTime } from "utils/getDateTime";
 import { convertToInternationalCurrencySystem } from "utils/convertToInternationalCurrencySystem";
-import { commaSeperator } from "utils/commaSeperator";
+import { commaSeparator } from "utils/commaSeparator";
 import { Process } from "models/process";
 
 interface LineChartProps {
@@ -44,7 +43,7 @@ export default function LineChart({ data = [] }: LineChartProps) {
                         {(_title, items) => {
                             return (
                                 <div className="flex p-3">
-                                    <div>{commaSeperator(items[0].value)}</div>
+                                    <div>{commaSeparator(items[0].value)}</div>
                                     <div>مطلب</div>
                                 </div>
                             );
